@@ -7,6 +7,7 @@ import {useQuery} from "@apollo/client";
 import {ALL_COUNTRIES_DATA} from "../../helpers/querries";
 import {client} from "../../helpers/setup-providers";
 import currencyData from '../../assets/currency_code.json';
+import {Box, FormControl, InputLabel, MenuItem, Select} from "@mui/material";
 
 
 
@@ -35,44 +36,57 @@ const Header = () => {
 				<h4>Filter By</h4>
 
 				<div className="filter-container">
-					<p>Select Country</p>
 					<div className="filter-item">
-						<select onChange={e => dispatch(setCountryCode(e.target.value))}>
-							<option value="">Select Country</option>
-
-							{showPage &&
-								country.map((item) =>
-									<option key={item.code} value={item.code}>{item.name}</option>
-								)
-							}
-						</select>
+						<p>Select Country</p>
+						<Box>
+							<FormControl style={{width: "300px"}}>
+								<InputLabel id="demo-simple-select-label">Select Country</InputLabel>
+								<Select labelId="demo-simple-select-label" id="demo-simple-select" label="Select Country" onChange={e => dispatch(setCountryCode(e.target.value))}>
+									<MenuItem value="">Select Country</MenuItem>
+									{showPage &&
+										country.map((item) =>
+											<MenuItem key={item.code} value={item.code}>{item.name}</MenuItem>
+										)
+									}
+								</Select>
+							</FormControl>
+						</Box>
 					</div>
 
 					<div className="filter-item">
 						<p>Continent</p>
-						<select onChange={e => dispatch(setContinent(e.target.value))}>
-							<option value="">Select Continent</option>
-							<option value="AF">Africa</option>
-							<option value="EU">Europe</option>
-							<option value="NA">North America</option>
-							<option value="SA">South America</option>
-							<option value="AS">ASIA</option>
-							<option value="AN">Antarctica</option>
-							<option value="AU">Australia</option>
-						</select>
+						<Box>
+							<FormControl style={{width: "200px"}}>
+								<InputLabel id="demo-simple-select-label">Select Continent</InputLabel>
+								<Select labelId="demo-simple-select-label" id="demo-simple-select" label="Select Continent" onChange={e => dispatch(setContinent(e.target.value))}>
+									<MenuItem value="">Select Continent</MenuItem>
+									<MenuItem value="AF">Africa</MenuItem>
+									<MenuItem value="EU">Europe</MenuItem>
+									<MenuItem value="NA">North America</MenuItem>
+									<MenuItem value="SA">South America</MenuItem>
+									<MenuItem value="AS">ASIA</MenuItem>
+									<MenuItem value="AN">Antarctica</MenuItem>
+									<MenuItem value="AU">Australia</MenuItem>
+								</Select>
+							</FormControl>
+						</Box>
 					</div>
 
 					<div className="filter-item">
 						<p>Currency Code</p>
-						<select onChange={e => dispatch(setCurrencyCode(e.target.value))}>
-							<option value="">Currency Code</option>
-
-							{showPage &&
-								currencyData.map((item) =>
-									<option key={item.code} value={item.code}>{item.code}</option>
-								)
-							}
-						</select>
+						<Box>
+							<FormControl style={{width: "200px"}}>
+								<InputLabel id="demo-simple-select-label">Currency Code</InputLabel>
+								<Select labelId="demo-simple-select-label" id="demo-simple-select" label="Currency Code" onChange={e => dispatch(setCurrencyCode(e.target.value))}>
+									<MenuItem value="">Currency Code</MenuItem>
+									{showPage &&
+										currencyData.map((item) =>
+											<MenuItem key={item.code} value={item.code}>{item.code}</MenuItem>
+										)
+									}
+								</Select>
+							</FormControl>
+						</Box>
 					</div>
 				</div>
 			</div>
