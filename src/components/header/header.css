@@ -6,6 +6,10 @@
 	justify-content: center;
 }
 
+.header-container h4 {
+	margin: 30px auto !important;
+}
+
 .search-container {
 	width: 50%;
 }
