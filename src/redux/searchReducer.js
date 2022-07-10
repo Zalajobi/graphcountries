@@ -6,7 +6,7 @@ export const searchSlice = createSlice({
         searchInput: '',
         countryCode: '',
         continent: '',
-	    currencyCode: '',
+        currencyCode: '',
     },
 
     reducers: {
@@ -16,16 +16,16 @@ export const searchSlice = createSlice({
         setCountryCode: (state, action) => {
             state.countryCode = action.payload
         },
-        setContinent:(state, action) => {
+        setContinent: (state, action) => {
             state.continent = action.payload
         },
-	    setCurrencyCode:(state, action) => {
+        setCurrencyCode: (state, action) => {
             state.currencyCode = action.payload
         },
     },
 
 });
 
-export const {setSearchInput, setCountryCode, setContinent, setCurrencyCode} = searchSlice.actions
+export const { setSearchInput, setCountryCode, setContinent, setCurrencyCode } = searchSlice.actions
 
 export default searchSlice.reducer

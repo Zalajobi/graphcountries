@@ -1,6 +1,6 @@
-import {ApolloClient, gql, InMemoryCache} from "@apollo/client";
+import { ApolloClient, gql, InMemoryCache } from "@apollo/client";
 
-export const typeDefs = gql`
+export const typeDefs = gql `
   extend type Query {
     isLoggedIn: Boolean!
     cartItems: [ID!]!
@@ -9,8 +9,8 @@ export const typeDefs = gql`
 
 // initialize a GraphQL client
 export const client = new ApolloClient({
-	cache: new InMemoryCache(),
-	storage: window.localStorage,
-	uri: 'https://countries.trevorblades.com',
-	typeDefs,
+    cache: new InMemoryCache(),
+    storage: window.localStorage,
+    uri: 'https://countries.trevorblades.com',
+    typeDefs,
 });
