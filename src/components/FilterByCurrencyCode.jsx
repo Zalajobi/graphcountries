@@ -29,8 +29,6 @@ const FilterByCurrencyCode = () => {
 		return <div id="preloader"><div id="loader"/></div>;
 	}
 
-	console.log(countries)
-
     return (
 		<React.Fragment>
 			{showPage &&
